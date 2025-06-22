@@ -1,199 +1,166 @@
-<!doctype html>
-<html class="no-js" lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
-  <title>Red Palm Oil - 3CayG</title>
-  <meta name="description" content="Virgin-Red Palm Oil (Elaeis guineensis) from Ghana. Rich in nutrients and perfect for cooking and skincare.">
-
-  <!-- Styles -->
-  <style>
-    /* Basic styling */
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      line-height: 1.6;
-    }
-    
-    .container {
-      width: 90%;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 20px;
-    }
-    
-    .product-container {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 30px;
-    }
-    
-    .product-gallery, .product-form {
-      flex: 1;
-      min-width: 300px;
-    }
-    
-    .product-title {
-      font-size: 28px;
-      margin-bottom: 15px;
-    }
-    
-    .product-price {
-      font-size: 22px;
-      font-weight: bold;
-      color: #bc1fb5;
-    }
-    
-    .product-description {
-      margin: 20px 0;
-    }
-    
-    .product-option {
-      margin-bottom: 15px;
-    }
-    
-    select, button {
-      padding: 10px;
-      width: 100%;
-      max-width: 300px;
-    }
-    
-    button {
-      background-color: #bc1fb5;
-      color: white;
-      border: none;
-      cursor: pointer;
-      font-size: 16px;
-      margin-top: 20px;
-    }
-    
-    button:hover {
-      background-color: #9c1a96;
-    }
-    
-    .product-image {
-      max-width: 100%;
-      height: auto;
-    }
-    
-    .thumbnail {
-      width: 80px;
-      height: 80px;
-      object-fit: cover;
-      margin-right: 10px;
-      cursor: pointer;
-    }
-    
-    /* Make everything clickable */
-    a, button, select {
-      cursor: pointer;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Organic Palm Oil - Premium African Palm Oil</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
-
 <body>
-  <div class="container">
-    <div class="product-container">
-      <!-- Product Gallery -->
-      <div class="product-gallery">
-        <div class="main-image">
-          <img src="//www.3cayg.com/cdn/shop/files/IMG-2090.png?v=1701807728" alt="Red Palm Oil" class="product-image" id="mainImage">
+    <header>
+        <div class="container">
+            <div class="logo-container">
+                <img src="logo.png" alt="Organic Palm Oil Logo" class="logo">
+                <div class="header-text">
+                    <h1>ORGANIC PALM OIL</h1>
+                    <p>Premium Quality from Africa</p>
+                </div>
+            </div>
         </div>
-        
-        <div class="thumbnails">
-          <img src="//www.3cayg.com/cdn/shop/files/IMG-2090.png?v=1701807728" class="thumbnail" onclick="changeImage(this)">
-          <img src="//www.3cayg.com/cdn/shop/products/red-palm-oil-virgin__55990.jpg?v=1701807727" class="thumbnail" onclick="changeImage(this)">
-          <img src="//www.3cayg.com/cdn/shop/files/97A50664-5B01-45D8-854E-FE7C160172BA.jpg?v=1711718748" class="thumbnail" onclick="changeImage(this)">
-          <img src="//www.3cayg.com/cdn/shop/files/4F0B2024-D357-4B48-8885-F29B11A18A1A.jpg?v=1711718749" class="thumbnail" onclick="changeImage(this)">
-        </div>
-      </div>
-      
-      <!-- Product Form -->
-      <div class="product-form">
-        <div class="product-details">
-          <div class="brand">3CayG</div>
-          <h1 class="product-title">Red Palm Oil</h1>
-          
-          <div class="product-price">
-            <span class="current-price">16,00 zł</span>
-          </div>
-          
-          <div class="product-description">
-            <p>Virgin-Red Palm Oil (Elaeis guineensis) from Ghana. This rich reddish oil is extracted from the flesh of each individual piece of fruit contained on the bunch.</p>
-            
-            <h3>Benefits:</h3>
-            <ul>
-              <li>Rich in beta-carotene and vitamin E</li>
-              <li>High in antioxidants</li>
-              <li>Great for cooking at high temperatures</li>
-              <li>Excellent for skin and hair care</li>
-              <li>Sustainably sourced</li>
-            </ul>
-            
-            <h3>Usage:</h3>
-            <p>Perfect for traditional African dishes, sautéing, frying, and as a nutritious addition to soups and stews. Also used in natural skincare formulations.</p>
-          </div>
-          
-          <form method="post" action="/cart/add">
-            <div class="product-option">
-              <label for="product-select">Size:</label>
-              <select id="product-select" name="id" onchange="updatePrice(this)">
-                <option value="44326823166009" data-price="16.00">2oz Jar - 16,00 zł</option>
-                <option value="41833849028665" data-price="40.00">15oz Jar - 40,00 zł</option>
-                <option value="42575760425017" data-price="62.00">58oz Jar - 62,00 zł</option>
-                <option value="42575760457785" data-price="92.00">116oz (2-58oz Jar) - 92,00 zł</option>
-                <option value="40696517591097" data-price="376.00">Pail 18KG - 376,00 zł</option>
-              </select>
-            </div>
-            
-            <div class="product-quantity">
-              <label for="quantity">Quantity:</label>
-              <input type="number" id="quantity" name="quantity" value="1" min="1">
-            </div>
-            
-            <button type="submit" name="add" id="add-to-cart">Add to Cart</button>
-          </form>
-          
-          <div class="related-products">
-            <h3>You May Also Like:</h3>
-            <div class="related-item">
-              <img src="//www.3cayg.com/cdn/shop/products/image_c45dca12-bda1-4e28-bb13-3ade428124a5_100x.jpg" alt="Liquid Black Soap">
-              <p>African Black Soap - 46,00 zł</p>
-            </div>
-            <div class="related-item">
-              <img src="//www.3cayg.com/cdn/shop/products/image_400x.jpg" alt="Shea Butter">
-              <p>Shea Butter - 32,00 zł</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+    </header>
 
-  <!-- Java-like functionality (though normally this would be JavaScript) -->
-  <script>
-    // Function to change main image when thumbnail is clicked
-    function changeImage(element) {
-      document.getElementById('mainImage').src = element.src;
-    }
-    
-    // Function to update price when variant is selected
-    function updatePrice(select) {
-      const selectedOption = select.options[select.selectedIndex];
-      const price = selectedOption.getAttribute('data-price');
-      document.querySelector('.current-price').textContent = price + ',00 zł';
-    }
-    
-    // Make sure all interactive elements are clickable
-    document.addEventListener('DOMContentLoaded', function() {
-      const buttons = document.querySelectorAll('button, a, select');
-      buttons.forEach(button => {
-        button.style.cursor = 'pointer';
-      });
-    });
-  </script>
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="#product">Our Product</a></li>
+                <li><a href="#benefits">Benefits</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container">
+        <section id="product" class="product-section">
+            <div class="product-image">
+                <img src="palm.png" alt="Organic Palm Oil 500ml">
+            </div>
+            <div class="product-details">
+                <h2>Premium African Palm Oil</h2>
+                <p class="description">500ml of pure, organic palm oil sustainably sourced from African family farms</p>
+                <p class="price">$9.99</p>
+                <button class="buy-btn" onclick="showPaymentForm()">ORDER NOW</button>
+            </div>
+        </section>
+
+        <section id="benefits">
+            <h2>Why Choose Our Palm Oil?</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <i class="fas fa-leaf"></i>
+                    <h3>100% Organic</h3>
+                    <p>Certified organic with no artificial additives</p>
+                </div>
+                <div class="benefit-card">
+                    <i class="fas fa-globe-africa"></i>
+                    <h3>African Sourced</h3>
+                    <p>Directly from sustainable African farms</p>
+                </div>
+                <div class="benefit-card">
+                    <i class="fas fa-heart"></i>
+                    <h3>Rich in Nutrients</h3>
+                    <p>High in Vitamin E and antioxidants</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <p><i class="fas fa-envelope"></i> info@organicpalmoil.com</p>
+                    <p><i class="fas fa-phone"></i> +1 (234) 567-8900</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Accra, Ghana / Lagos, Nigeria</p>
+                </div>
+                <form class="contact-form">
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="email" placeholder="Your Email" required>
+                    <textarea placeholder="Your Message" required></textarea>
+                    <button type="submit">Send Message</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Payment Modal -->
+    <div id="payment-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <h2>Complete Your Order</h2>
+            
+            <form id="payment-form">
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="address">Shipping Address</label>
+                    <textarea id="address" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" required>
+                </div>
+                
+                <div class="payment-methods">
+                    <h3>Payment Method</h3>
+                    <div class="payment-option" onclick="selectPayment('blik')">
+                        <input type="radio" name="payment" id="blik-payment" checked>
+                        <label for="blik-payment">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/BLIK_logo.svg/1200px-BLIK_logo.svg.png" alt="BLIK">
+                            <span>BLIK Payment</span>
+                        </label>
+                    </div>
+                    <div class="payment-option" onclick="selectPayment('card')">
+                        <input type="radio" name="payment" id="card-payment">
+                        <label for="card-payment">
+                            <i class="far fa-credit-card"></i>
+                            <span>Credit/Debit Card</span>
+                        </label>
+                    </div>
+                </div>
+                
+                <div id="blik-details" class="payment-details">
+                    <p>You'll be redirected to our secure BLIK payment page after submitting this form</p>
+                </div>
+                
+                <div id="card-details" class="payment-details" style="display:none;">
+                    <div class="form-group">
+                        <label for="card-number">Card Number</label>
+                        <input type="text" id="card-number" placeholder="1234 5678 9012 3456">
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="expiry">Expiry Date</label>
+                            <input type="text" id="expiry" placeholder="MM/YY">
+                        </div>
+                        <div class="form-group">
+                            <label for="cvc">CVC</label>
+                            <input type="text" id="cvc" placeholder="123">
+                        </div>
+                    </div>
+                </div>
+                
+                <button type="button" class="submit-btn" onclick="processPayment()">Complete Payment</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Organic Palm Oil. All rights reserved.</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
