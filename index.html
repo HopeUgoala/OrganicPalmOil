@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Organic Palm Oil - Premium Quality</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/currency.js@2.0.4/dist/currency.min.js"></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Organic Palm Oil</h1>
+            <p>Premium Quality, Sustainably Sourced</p>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li>
+                    <select id="currency-selector" onchange="changeCurrency()">
+                        <option value="USD">USD ($)</option>
+                        <option value="EUR">EUR (€)</option>
+                        <option value="GBP">GBP (£)</option>
+                        <option value="PLN">PLN (zł)</option>
+                        <option value="NGN">NGN (₦)</option>
+                    </select>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container">
+        <section id="products">
+            <h2>Our Premium Product</h2>
+            <div class="product-card">
+                <img src="palm.png" alt="Organic Palm Oil 500ml">
+                <h3>Organic Palm Oil</h3>
+                <p class="description">500ml of pure, organic palm oil sustainably sourced from family farms</p>
+                <p class="price" data-base-price="8.99">$8.99</p>
+                <button class="buy-btn" onclick="showPaymentOptions()">Buy Now</button>
+            </div>
+        </section>
+
+        <section id="about">
+            <h2>About Our Palm Oil</h2>
+            <p>We source our palm oil from sustainable farms that prioritize environmental conservation and fair labor practices. Our products are carefully processed to maintain their natural nutrients and flavor.</p>
+            <p>All our palm oil is:</p>
+            <ul>
+                <li>100% Organic Certified</li>
+                <li>Non-GMO</li>
+                <li>Free from artificial preservatives</li>
+                <li>Sustainably harvested</li>
+                <li>Rich in natural vitamins and antioxidants</li>
+            </ul>
+        </section>
+
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <p>Have questions about our products or want to place a bulk order?</p>
+            <p>Email: <a href="mailto:info@organicpalmoil.com">info@organicpalmoil.com</a></p>
+            <p>Phone: +1 (555) 123-4567</p>
+        </section>
+    </main>
+
+    <div id="payment-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <h3>Purchase Organic Palm Oil (500ml)</h3>
+            <p>Price: <span id="modal-price">$8.99</span></p>
+            
+            <div class="payment-options">
+                <h4>Select Payment Method:</h4>
+                <div class="payment-method" onclick="processPayment('paypal')">
+                    <img src="https://www.paypalobjects.com/webstatic/mktg/logo/pp_cc_mark_37x23.jpg" alt="PayPal">
+                    <span>PayPal</span>
+                </div>
+                <div class="payment-method" onclick="processPayment('blik')">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/BLIK_logo.svg/1200px-BLIK_logo.svg.png" alt="BLIK" style="width: 60px;">
+                    <span>BLIK</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Organic Palm Oil. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
