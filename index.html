@@ -3,97 +3,112 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Organic Palm Oil - Premium Quality</title>
+    <title>Organic Palm Oil - Premium African Palm Oil</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/currency.js@2.0.4/dist/currency.min.js"></script>
 </head>
 <body>
     <header>
         <div class="container">
-            <h1>Organic Palm Oil</h1>
-            <p>Premium Quality, Sustainably Sourced</p>
+            <div class="logo-container">
+                <img src="logo.png" alt="Organic Palm Oil Logo" class="logo">
+                <div class="header-text">
+                    <h1>ORGANIC PALM OIL</h1>
+                    <p>Premium Quality from Africa</p>
+                </div>
+            </div>
         </div>
     </header>
 
     <nav>
         <div class="container">
             <ul>
-                <li><a href="#products">Products</a></li>
-                <li><a href="#about">About Us</a></li>
+                <li><a href="#product">Our Product</a></li>
+                <li><a href="#benefits">Benefits</a></li>
                 <li><a href="#contact">Contact</a></li>
-                <li>
-                    <select id="currency-selector" onchange="changeCurrency()">
-                        <option value="USD">USD ($)</option>
-                        <option value="EUR">EUR (€)</option>
-                        <option value="GBP">GBP (£)</option>
-                        <option value="PLN">PLN (zł)</option>
-                        <option value="NGN">NGN (₦)</option>
-                    </select>
-                </li>
             </ul>
         </div>
     </nav>
 
     <main class="container">
-        <section id="products">
-            <h2>Our Premium Product</h2>
-            <div class="product-card">
+        <section id="product" class="product-section">
+            <div class="product-image">
                 <img src="palm.png" alt="Organic Palm Oil 500ml">
-                <h3>Organic Palm Oil</h3>
-                <p class="description">500ml of pure, organic palm oil sustainably sourced from family farms</p>
-                <p class="price" data-base-price="8.99">$8.99</p>
-                 <button class="buy-btn" onclick="showPaymentOptions()"><a href="https://buy.stripe.com/test_eVq7sLdXW0xW2To3bJ9MY00" class="buy-button">Pay with BLIK</a></button>
+            </div>
+            <div class="product-details">
+                <h2>Premium African Palm Oil</h2>
+                <p class="description">500ml of pure, organic palm oil sustainably sourced from African family farms</p>
+                <p class="price">$9.99</p>
+                <button class="buy-btn" onclick="showPaymentForm()">ORDER NOW</button>
             </div>
         </section>
 
-        <section id="about">
-            <h2>About Our Palm Oil</h2>
-            <p>We source our palm oil from sustainable farms that prioritize environmental conservation and fair labor practices. Our products are carefully processed to maintain their natural nutrients and flavor.</p>
-            <p>All our palm oil is:</p>
-            <ul>
-                <li>100% Organic Certified</li>
-                <li>Non-GMO</li>
-                <li>Free from artificial preservatives</li>
-                <li>Sustainably harvested</li>
-                <li>Rich in natural vitamins and antioxidants</li>
-            </ul>
+        <section id="benefits">
+            <h2>Why Choose Our Palm Oil?</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <i class="fas fa-leaf"></i>
+                    <h3>100% Organic</h3>
+                    <p>Certified organic with no artificial additives</p>
+                </div>
+                <div class="benefit-card">
+                    <i class="fas fa-globe-africa"></i>
+                    <h3>African Sourced</h3>
+                    <p>Directly from sustainable African farms</p>
+                </div>
+                <div class="benefit-card">
+                    <i class="fas fa-heart"></i>
+                    <h3>Rich in Nutrients</h3>
+                    <p>High in Vitamin E and antioxidants</p>
+                </div>
+            </div>
         </section>
 
         <section id="contact">
             <h2>Contact Us</h2>
-            <p>Have questions about our products or want to place a bulk order?</p>
-            <p>Email: <a href="mailto:info@organicpalmoil.com">info@organicpalmoil.com</a></p>
-            <p>Phone: +1 (555) 123-4567</p>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <p><i class="fas fa-envelope"></i> info@organicpalmoil.com</p>
+                    <p><i class="fas fa-phone"></i> +1 (234) 567-8900</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Accra, Ghana / Lagos, Nigeria</p>
+                </div>
+                <form class="contact-form">
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="email" placeholder="Your Email" required>
+                    <textarea placeholder="Your Message" required></textarea>
+                    <button type="submit">Send Message</button>
+                </form>
+            </div>
         </section>
     </main>
 
+    <!-- Payment Modal -->
     <div id="payment-modal" class="modal">
         <div class="modal-content">
             <span class="close-btn" onclick="closeModal()">&times;</span>
-            <h3>Purchase Organic Palm Oil (500ml)</h3>
-            <p>Price: <span id="modal-price">$8.99</span></p>
+            <h2>Complete Your Order</h2>
             
-            <div class="payment-options">
-                <h4>Select Payment Method:</h4>
-                <div class="payment-method" onclick="processPayment('paypal')">
-                    <img src="https://www.paypalobjects.com/webstatic/mktg/logo/pp_cc_mark_37x23.jpg" alt="PayPal">
-                    <span>PayPal</span>
+            <form id="payment-form">
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" required>
                 </div>
-                <div class="payment-method" onclick="processPayment('blik')">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/BLIK_logo.svg/1200px-BLIK_logo.svg.png" alt="BLIK" style="width: 60px;">
-                    <span>BLIK</span>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" required>
                 </div>
-            </div>
-        </div>
-    </div>
-
-    <footer>
-        <div class="container">
-            <p>&copy; 2023 Organic Palm Oil. All rights reserved.</p>
-        </div>
-    </footer>
-
-    <script src="scripts.js"></script>
-</body>
-</html>
+                <div class="form-group">
+                    <label for="address">Shipping Address</label>
+                    <textarea id="address" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" required>
+                </div>
+                
+                <div class="payment-methods">
+                    <h3>Payment Method</h3>
+                    <div class="payment-option" onclick="selectPayment('blik')">
+                        <input type="radio" name="payment" id="blik-payment" checked>
+                        <label for="blik-payment">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/BLIK_logo.svg/1200
