@@ -55,4 +55,19 @@ function processPayment() {
     // 2. Handle the payment processing
     // 3. Show success/error message
     console.log("Order data being processed:", orderData);
+
+    // For production, you should:
+// 1. Create a Checkout Session on your backend
+// 2. Then redirect to Stripe
+fetch('/create-checkout-session', {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(orderData)
+})
+.then(response => response.json())
+.then(session => {
+    window.location.href = session.url; // Redirect to Stripe
+});
 }
